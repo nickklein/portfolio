@@ -1,0 +1,143 @@
+@import '_variables';
+
+body {
+	background: $body;
+	font-family: $primary-font;
+	color: $primary-color;
+	overflow-x: hidden;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	margin-bottom: .5rem;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.2;
+	color: inherit;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.wpjs {
+	opacity: 0;
+}
+
+.svg-border {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: calc(100% + 10px);
+	display: block;
+}
+
+
+.section-container {
+	clear: left;
+	padding: 2.5em 0;
+	h2 {
+		font-size: 2.25em;
+		font-weight: bold;
+		text-align: center;
+		margin: 0 0 1.2em 0;
+		&.featured {
+			color: $feature-color;
+		}
+	}
+}
+
+.expertise{
+	background: $expertise-bg-img;
+	background-size: cover;
+	color: $primary-color-light;
+	width: 100%;
+	.introduction {
+		p {
+			text-align: center;
+			margin: 0 0 1.2em 0;
+		}
+	}
+	.exp-container {
+		padding: 0;
+		margin: 0;
+	    list-style: none;
+	    overflow: hidden;
+	    @media (min-width: $md) {
+	   		display: flex;
+		}
+
+		.exp-item {
+	    	height: 13em;
+			margin: 5px;
+		    @media (min-width: $md) {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+			.icons {
+				margin-top: 0.5em;
+				text-align: right;
+			}
+			.info h3 {
+				color: $feature-color;
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+		}
+		.exp-item:before {
+		    content:'';
+		    float:left;
+		    padding-top:100%;
+		}
+
+	}
+
+	.skills-container {
+		display: none;
+		list-style-type: none;
+		width: 100%;
+		padding: 0;
+		li {
+			display: block;
+			margin: 5px;
+			.bg {
+				padding: 1em 1em;
+				background: $skills-bg;
+				span {
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+				&:hover {
+					background: lighten($skills-bg, 10%);
+				}
+			}
+		}
+	}
+}
+
+.contact {
+	position: relative;
+	background: $contact-bg;
+	padding: 6em 0 2.5em 0;
+	.contact-top {
+		top: -6px;
+		left: -5px;
+	}
+	.form {
+		@media (min-width: $lg) {
+			width: 75%;
+		}
+	}
+}
