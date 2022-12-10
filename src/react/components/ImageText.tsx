@@ -1,6 +1,7 @@
 import React from 'react'
+import '../../scss/components/imagetext.scss'
 
-function ImageText(props) {
+function ImageText(props: any) {
     const {url, description} = props;
 
     return (

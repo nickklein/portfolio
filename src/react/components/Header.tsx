@@ -1,8 +1,20 @@
 import React from 'react'
 import Button from './atoms/Button'
 import '../../scss/components/header.scss'
-import {container} from '../../style/App.css'
 
+interface ButtonItems {
+    label: String,
+    href: String,
+    type: String,
+    onClick: any
+}
+
+interface Props extends Array<ButtonItems> {
+    title: JSX.Element,
+    subHeader: String,
+    buttons: ButtonItems,
+    onClick: any, 
+}
 
 function Header(props: any): JSX.Element {
     const {title, subHeader, buttons, onClick} = props;
