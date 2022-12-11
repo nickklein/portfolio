@@ -2,16 +2,7 @@
 
 .img-txt-container {
 	font-weight: 300;
-	.container {
-		width: 100%;
-		padding-right: 15px;
-		padding-left: 15px;
-		margin: 0 auto;
-		@media (min-width: $lg) {
-			width: 75%;
-			max-width: 960px;
-		}
-	}
+
 	.image {
 		text-align: center;
 		@media (min-width: $md) {

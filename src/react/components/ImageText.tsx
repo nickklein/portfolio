@@ -1,22 +1,28 @@
 import React from 'react'
 import '../../scss/components/imagetext.scss'
 
-function ImageText(props: any) {
-    const {url, description} = props;
+interface Props {
+    title?: string,
+    image: string,
+    text: string
+}
+
+function ImageText(props: Props) {
+    const {title, image, text} = props;
 
     return (
         <section className="img-txt-container section-container">
-            <h2 className="animate fade-in-quick">About</h2>
+            {title && <h2 className="animate fade-in-quick">{title}</h2> }
             <div className="container">
                 <div className="row">
-                    {url && 
+                    {image && 
                         <div className="image">
-                            <img src={url} alt="nick klein" />
+                            <img src={image} alt="nick klein" />
                         </div>
                     }
-                    {description && 
+                    {text && 
                         <div className="introduction">
-                            <p>{description}</p>
+                            <p>{text}</p>
                         </div>
                     }
                 </div>

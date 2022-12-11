@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../../scss/components/buttons.scss'
+import '../../../scss/components/atoms/buttons.scss'
 
 interface Style {
     primary: String;

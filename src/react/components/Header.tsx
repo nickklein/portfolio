@@ -2,22 +2,19 @@ import React from 'react'
 import Button from './atoms/Button'
 import '../../scss/components/header.scss'
 
-interface ButtonItems {
-    label: String,
-    href: String,
-    type: String,
-    onClick: any
-}
-
-interface Props extends Array<ButtonItems> {
+interface Props {
     title: JSX.Element,
     subHeader: String,
-    buttons: ButtonItems,
-    onClick: any, 
+    buttons: {
+      label: String;
+      href: String;
+      type: String,
+      onClick?: any
+    }[];
 }
 
-function Header(props: any): JSX.Element {
-    const {title, subHeader, buttons, onClick} = props;
+function Header(props: Props): JSX.Element {
+    const {title, subHeader, buttons} = props;
 
     const buttonHtml = buttons.map((items: any) => {
         return (

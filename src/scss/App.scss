@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_reset';
+@import 'components/atoms/_fonts';
 
 body {
 	background: $body;
@@ -33,9 +34,9 @@ p {
 	margin-bottom: 1rem;
 }
 
-.wpjs {
-	opacity: 0;
-}
+// .wpjs {
+// 	opacity: 0;
+// }
 
 .svg-border {
 	position: absolute;
@@ -60,73 +61,17 @@ p {
 	}
 }
 
-.expertise{
-	background: $expertise-bg-img;
-	background-size: cover;
-	color: $primary-color-light;
+.container {
 	width: 100%;
-	.introduction {
-		p {
-			text-align: center;
-			margin: 0 0 1.2em 0;
-		}
-	}
-	.exp-container {
-		padding: 0;
-		margin: 0;
-	    list-style: none;
-	    overflow: hidden;
-	    @media (min-width: $md) {
-	   		display: flex;
-		}
-
-		.exp-item {
-	    	height: 13em;
-			margin: 5px;
-		    @media (min-width: $md) {
-				flex: 0 0 50%;
-				max-width: 50%;
-			}
-			.icons {
-				margin-top: 0.5em;
-				text-align: right;
-			}
-			.info h3 {
-				color: $feature-color;
-				font-size: 1.5em;
-				font-weight: bold;
-			}
-		}
-		.exp-item:before {
-		    content:'';
-		    float:left;
-		    padding-top:100%;
-		}
-
-	}
-
-	.skills-container {
-		display: none;
-		list-style-type: none;
-		width: 100%;
-		padding: 0;
-		li {
-			display: block;
-			margin: 5px;
-			.bg {
-				padding: 1em 1em;
-				background: $skills-bg;
-				span {
-					font-weight: bold;
-					text-transform: uppercase;
-				}
-				&:hover {
-					background: lighten($skills-bg, 10%);
-				}
-			}
-		}
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: 0 auto;
+	@media (min-width: $lg) {
+		width: 75%;
+		max-width: 960px;
 	}
 }
+
 
 .contact {
 	position: relative;

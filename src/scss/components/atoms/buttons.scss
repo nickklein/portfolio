@@ -1,6 +1,8 @@
-@import '../_variables.scss';
+@import '../../_variables.scss';
 
 a.btn, .btn input[type="button"] {
+	display: block;
+	width: 100%;
 	background: $btn-bg;
 	border: $btn-border;
 	border-radius: 0;
@@ -24,13 +26,15 @@ a.btn, .btn input[type="button"] {
 }
 
 .btn-group {
+	width: 100%;
 	margin-top: 1em;
 	display: block;
 	@media (min-width: $sm) {
+		width: auto;
 		display: inline-flex;
 	}
 	a {
-		width: 90%;
+		width: 100%;
 		margin: 0.5em 0;
 		@media (min-width: $sm) {
 			width: auto;
