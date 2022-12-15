@@ -9,7 +9,7 @@ interface Props {
       label: String;
       href: String;
       type: String,
-      onClick?: any
+      onClick?: React.MouseEventHandler,
     }[];
 }
 

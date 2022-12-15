@@ -3,7 +3,10 @@ import '../../scss/components/imagetext.scss'
 
 interface Props {
     title?: string,
-    image: string,
+    image: {
+        url: string,
+        alt: string,
+    },
     text: string
 }
 
@@ -17,7 +20,7 @@ function ImageText(props: Props) {
                 <div className="row">
                     {image && 
                         <div className="image">
-                            <img src={image} alt="nick klein" />
+                            <img src={image.url} alt={image.alt} />
                         </div>
                     }
                     {text && 

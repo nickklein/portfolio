@@ -3,7 +3,6 @@ import '../../scss/components/footer.scss'
 
 interface Props {
     links: {
-        label: string,
         icon: string,
         link: string
     }[]
