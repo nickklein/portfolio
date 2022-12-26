@@ -1,50 +1,84 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../scss/components/threecolumngrid.scss'
-
+import Button from './atoms/Button'
+import GridItem from './atoms/GridItem';
 
 interface Props {
-    
+    title: string,
+    filterButtons: Array<string>,
+    items: Array<CurrentType>,
+    scrollToReference: any,
 }
 
-function ThreeColumnGrid(props: any) {
-    return (
-        <section className="three-col-grid section-container">
-            <h2 id="work">Work</h2>
-                
-            <div>
-                <div className="btn-group filter-button-group">
-                    <button type="button" className="btn btn-secondary" data-filter="all">All</button>
+function ThreeColumnGrid(props: Props) {
+    const { title, items, filterButtons, scrollToReference } = props;
+    const [ stateItems, setStateItems] = useState(items);
 
-                    <button type="button" className="btn btn-secondary" data-filter="hardware">Hardware</button>
-                    <button type="button" className="btn btn-secondary" data-filter="laravel">Laravel</button>
-                    <button type="button" className="btn btn-secondary" data-filter="php">PHP</button>
-                    <button type="button" className="btn btn-secondary" data-filter="python">Python</button>
-                    <button type="button" className="btn btn-secondary" data-filter="wordpress">WordPress</button>
+    /**
+     * Filter Grid items
+     * @param category 
+     */
+    function filterItems(category: string) {
+        setStateItems((prevStateItems) => {
+            return prevStateItems.map((item) => {
+                if (item.category === category || category === 'All') {
+                    return {
+                        ...item,
+                        show: true,
+                    }
+                }
+    
+                return {
+                    ...item,
+                    show: false,
+                }
+            });
+        });
+    }
+
+    /**
+     * Create JSX Items for grid items
+     */
+    const buttonHtml = filterButtons.map((item) => {
+        return (
+            <Button 
+                isButton={true} 
+                label={item} 
+                onClick={() => filterItems(item)} 
+            />
+        );
+    });
+
+
+    /**
+     * Create JSX Items for grid items
+     */
+    const gridItemsHtml = stateItems.map((item) => {
+            return ( 
+                <GridItem
+                    show={item.show}
+                    title={item.shortened_title}
+                    color={item.color}
+                    thumbnail={item.thumbnail}
+                    logo={item.logo}
+                    url={"work/"+item.slug+"/"}
+                />
+            )
+    });
+
+    return (
+        <section className="three-col-grid section-container" ref={scrollToReference}>
+            <h2>{title}</h2>
+                
+            <div className="filter">
+                <div className="btn-group filter-button-group">
+                    {buttonHtml}
                 </div>
             </div>
                 
             <div className="container-wrap">
-                <div className="row">
-                    <div className="col-item wpjs slide-bottom col-md-6 col-lg-4 all laravel animate">
-                        <a href="https://www.nickklein.ca/work/notes-app/" className="grid-item">
-                            <div className="grid-image color"></div>
-                                            
-                            <div className="grid-info text">
-                                <h3>Notes</h3>  
-                            </div>
-                        </a>
-                    </div>
-                    <div className="col-item wpjs slide-bottom col-md-6 col-lg-4 all laravel animate">
-                        <a href="https://www.nickklein.ca/work/steamcompanion/" className="grid-item">
-                            <div className="grid-image">
-                                <img className="rounded" src="https://www.nickklein.ca/wp-content/uploads/2018/10/steamcompanion-1-500x500-c-default.jpg" />
-                            </div>
-                                    
-                            <div className="grid-info">
-                                <img src="https://www.nickklein.ca/wp-content/uploads/2018/10/sc.png" />  
-                            </div>
-                        </a>
-                    </div>
+                <div className="grid">
+                    {gridItemsHtml}
                 </div>
             </div>
         </section>

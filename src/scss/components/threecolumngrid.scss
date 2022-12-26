@@ -8,11 +8,25 @@
 		}
 	}
 
+	.filter {
+		text-align: center;
+	}
+
+	@media (min-width: $md) {
+		.grid {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
 	.col-item {
 		padding-top: 1em;
 		padding-bottom: 1em;
 		padding-left: 1em;
 		padding-right: 1em;
+		@media (min-width: $md) {
+			flex: 0 0 33.33%;
+		}
 	}
 
 	.grid-item {

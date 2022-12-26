@@ -12,9 +12,11 @@ function Footer(props: Props): JSX.Element {
     const {links} = props;
     var currentYear = new Date().getFullYear();
 
-    const linksHtml = links.map((item) => {
+    const linksHtml = links.map((item, index) => {
         return (
-            <li><a href={item.link} target="_blank"><span className={"icon-"+item.icon}></span></a></li>
+            <li key={index}>
+                <a href={item.link} target="_blank"><span className={"icon-"+item.icon}></span></a>
+            </li>
         )
     });
 

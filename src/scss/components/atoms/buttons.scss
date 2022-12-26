@@ -58,3 +58,23 @@ a.back {
 	left: 0.5em;
 	text-transform: initial;
 }
+
+
+button.btn {
+	color: #fff;
+	background-color: #6c757d;
+	border-color: #6c757d;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	&:hover {
+		background-color: #5a6268;
+		border-color: #545b62;
+	}
+}
