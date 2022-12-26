@@ -1,0 +1,86 @@
+@import '../_variables.scss';
+
+.expertise{
+	background: $expertise-bg-img;
+	background-size: cover;
+	color: $primary-color-light;
+	width: 100%;
+	.introduction {
+		p {
+			text-align: center;
+			margin: 0 0 1.2em 0;
+		}
+	}
+	.exp-container {
+		padding: 0;
+		margin: 0;
+	    list-style: none;
+	    overflow: hidden;
+	    @media (min-width: $md) {
+	   		display: flex;
+		}
+
+		.exp-item {
+	    	height: 13em;
+			margin: 5px;
+            display: flex;
+		    @media (min-width: $sm) {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+			.icons {
+
+                position: relative;
+                width: 100%;
+                min-height: 1px;
+                padding-right: 15px;
+                padding-left: 15px;
+
+                @media (min-width: $md) {
+                    flex: 0 0 25%;
+                    max-width: 25%;
+				    margin-top: 0.5em;
+				    text-align: right;
+                }
+
+			}
+            .info {
+                flex: 0 0 75%;
+                max-width: 75%;
+            }
+			.info h3 {
+				color: $feature-color;
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+		}
+		.exp-item:before {
+		    content:'';
+		    float:left;
+		    padding-top:100%;
+		}
+
+	}
+
+	.skills-container {
+		display: block;
+		list-style-type: none;
+		width: 100%;
+		padding: 0;
+		li {
+			display: block;
+			margin: 5px;
+			.bg {
+				padding: 1em 1em;
+				background: $skills-bg;
+				span {
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+				&:hover {
+					background: lighten($skills-bg, 10%);
+				}
+			}
+		}
+	}
+}

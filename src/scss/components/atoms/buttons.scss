@@ -1,0 +1,80 @@
+@import '../../_variables.scss';
+
+a.btn, input[type="button"], input[type="submit"] {
+	display: block;
+	width: 100%;
+	background: $btn-bg;
+	border: $btn-border;
+	border-radius: 0;
+	color: $btn-color;
+	padding: .75em 3em;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	&:hover {
+		color: $btn-color-hover;
+		background: $btn-bg-hover;
+	}
+	&.dark {
+		color: $btn-dark-color;
+		border: $btn-dark-border;
+		&:hover {
+			color: $btn-dark-color-hover;
+			background: $btn-dark-bg-hover;
+		}
+	}
+}
+
+.btn-group {
+	width: 100%;
+	margin-top: 1em;
+	display: block;
+	@media (min-width: $sm) {
+		width: auto;
+		display: inline-flex;
+	}
+	a {
+		width: 100%;
+		margin: 0.5em 0;
+		@media (min-width: $sm) {
+			width: auto;
+			margin: 0 0.5em 0 0;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+a.back {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+	position: absolute;
+	top: 0.5em;
+	left: 0.5em;
+	text-transform: initial;
+}
+
+
+button.btn {
+	color: #fff;
+	background-color: #6c757d;
+	border-color: #6c757d;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	&:hover {
+		background-color: #5a6268;
+		border-color: #545b62;
+	}
+}

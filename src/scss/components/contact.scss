@@ -1,0 +1,28 @@
+@import '../_variables.scss';
+
+form {
+	.row {
+		margin: 5px 0;
+	}
+    span.error {
+        display: inline-block;
+        color: red;
+        margin: 10px 0 ;
+    }
+	input,textarea {
+		border: 1px solid $form-input-bg;
+	}
+	input[type="text"], input[type="email"], textarea {
+		color: $form-color;
+		background: $form-input-bg;
+		padding: 1em;
+		width: 100%;
+		border-radius: .5em;
+        &.error {
+            border: 1px solid red !important;
+        }
+	}
+	input[type="submit"], input[type="button"] {
+		margin: 1.5em 0;
+	}
+}
