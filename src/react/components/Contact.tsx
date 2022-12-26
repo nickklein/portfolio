@@ -14,6 +14,7 @@ type formDataType = {
 }
 function Contact(props: Props) {
     const { title } = props;
+    const fields = ['name', 'email', 'message', 'challenge'];
     const validationCharacters = {
         name: 3,
         message: 30
@@ -27,7 +28,7 @@ function Contact(props: Props) {
             text: "",
             hasError: false,
         },
-        description: {
+        message: {
             text: "",
             hasError: false,
         },
@@ -40,6 +41,7 @@ function Contact(props: Props) {
     /**
      * Builds the form data
      * @param event 
+     * @return void
      */
     function buildFormData(event: React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>): void {
         setFormData((prevSetFormData) => {
@@ -54,13 +56,17 @@ function Contact(props: Props) {
         });
     }
 
+    function onBlur(event: React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>): void {
+        const { name } = event.target;
+        validateField(name);
+    }
+
     /**
      * Validate each form
      * @param event 
      * @return void
      */
-    function validateField(event: React.ChangeEvent<HTMLInputElement>|React.ChangeEvent<HTMLTextAreaElement>): void {
-        const { name } = event.target;
+    function validateField(name: string): void {
         if (name === 'name' && !isNameValid(formData.name.text)) {
             setFormErrorMessage('name');
         }
@@ -69,8 +75,8 @@ function Contact(props: Props) {
             setFormErrorMessage('email');
         }
 
-        if (name === 'description' && !isMessageValid(formData.description.text)) {
-            setFormErrorMessage('description');
+        if (name === 'message' && !isMessageValid(formData.message.text)) {
+            setFormErrorMessage('message');
         }
 
         if (name === 'challenge' && !isChallengeValid(formData.challenge.text)) {
@@ -81,10 +87,10 @@ function Contact(props: Props) {
     /**
      * Check if name is valid
      * @param value 
-     * @returns 
+     * @returns boolean
      */
     function isNameValid(value: string): boolean {
-        if (formData.name.text.length < validationCharacters.name) {
+        if (value.length < validationCharacters.name) {
             return false;
         }
         
@@ -105,10 +111,10 @@ function Contact(props: Props) {
     /**
      * Check if message field is valid
      * @param value 
-     * @returns 
+     * @returns boolean
      */
     function isMessageValid(value: string): boolean {
-        if (formData.description.text.length < validationCharacters.message) {
+        if (value.length < validationCharacters.message) {
             return false;
         }
 
@@ -119,10 +125,10 @@ function Contact(props: Props) {
      * Check if challenge is valid
      * TODO: Maybe rotate these around with different questions/answers
      * @param value 
-     * @returns 
+     * @returns boolean
      */
     function isChallengeValid(value: string): boolean {
-        if (formData.challenge.text !== "4") {
+        if (value !== "4") {
             return false;
         }
 
@@ -131,7 +137,6 @@ function Contact(props: Props) {
 
     /**
      * Checks if whole form is valid
-     * TODO. Why not just loop?
      * @returns boolean
      */
     function isFormValid(): boolean {
@@ -143,7 +148,7 @@ function Contact(props: Props) {
             return false;
         }
 
-        if (!isMessageValid(formData.description.text)) {
+        if (!isMessageValid(formData.message.text)) {
             return false;
         }
 
@@ -157,6 +162,9 @@ function Contact(props: Props) {
     function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
         event.preventDefault();
         if (!isFormValid()) {
+            fields.forEach((item) => {
+                validateField(item);
+            });
             return;
         }
 
@@ -196,7 +204,7 @@ function Contact(props: Props) {
                             type="text" 
                             placeholder="Name"
                             className={formData.name.hasError ? 'error' : ''}
-                            onBlur={validateField}
+                            onBlur={onBlur}
                             onChange={(event) => buildFormData(event)} 
                             value={formData.name.text} 
                         />
@@ -209,7 +217,7 @@ function Contact(props: Props) {
                             name="email" 
                             placeholder="Email"
                             className={formData.email.hasError ? 'error' : ''}
-                            onBlur={validateField}
+                            onBlur={onBlur}
                             onChange={(event) => buildFormData(event)} 
                             value={formData.email.text} 
                         />
@@ -217,16 +225,16 @@ function Contact(props: Props) {
                     </div>
                     <div className="row">
                         <textarea 
-                            name="description" 
+                            name="message" 
                             id="message" 
                             cols={30} 
                             rows={10} 
                             placeholder="Your Message"
-                            className={formData.description.hasError ? 'error' : ''}
-                            onBlur={validateField}
+                            className={formData.message.hasError ? 'error' : ''}
+                            onBlur={onBlur}
                             onChange={(event) => buildFormData(event)} 
-                            value={formData.description.text}></textarea>
-                        {formData.description.hasError && <span className="error">Your description is invalid. It needs to be at least {validationCharacters.message} characters</span> }
+                            value={formData.message.text}></textarea>
+                        {formData.message.hasError && <span className="error">Your message is invalid. It needs to be at least {validationCharacters.message} characters</span> }
                     </div>
                     <div className="row">
                         <input 
@@ -235,7 +243,7 @@ function Contact(props: Props) {
                             type="text" 
                             placeholder="What is 1+3?"
                             className={formData.challenge.hasError ? 'error' : ''}
-                            onBlur={validateField}
+                            onBlur={onBlur}
                             onChange={(event) => buildFormData(event)} 
                             value={formData.challenge.text} 
                         />

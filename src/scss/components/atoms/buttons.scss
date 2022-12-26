@@ -1,6 +1,6 @@
 @import '../../_variables.scss';
 
-a.btn, .btn input[type="button"] {
+a.btn, input[type="button"], input[type="submit"] {
 	display: block;
 	width: 100%;
 	background: $btn-bg;
