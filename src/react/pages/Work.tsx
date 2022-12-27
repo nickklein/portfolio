@@ -6,6 +6,7 @@ import OneColumnGrid from '../components/OneColumnGrid';
 import Gallery from '../components/Gallery';
 import ThreeColumnGrid from '../components/ThreeColumnGrid';
 import Footer from '../components/Footer';
+import ErrorPage from '../pages/Error';
 
 function Work() {    
     const { slug } = useParams();
@@ -33,10 +34,13 @@ function Work() {
         setCurrentPage(slug);
     }, []);
 
+    
+
     return (
         <>
-            {current && 
+            {current ? (
                 <>
+                
                     <Header 
                         title={current.title}
                         short={true}
@@ -56,7 +60,7 @@ function Work() {
 
                     <ThreeColumnGrid
                         title={"Other Projects"}
-                        items={work}
+                        items={[work[0], work[1], work[2]]}
                     />
 
                     <Footer links={[
@@ -69,9 +73,11 @@ function Work() {
                             link: 'https://www.linkedin.com/in/nick-k-1574941b'
                         }
                     ]} /> 
-
+                    
                 </>
-            }
+            ) : (
+                <ErrorPage />
+            )}
         </>
     )
 }

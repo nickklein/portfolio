@@ -1,14 +1,17 @@
 import React from 'react'
 import '../../scss/components/gallery.scss'
 
+/** TODO: Props: any */
 function Gallery(props: any) {
     const { images } = props;
-    console.log(images);
+
     let galleryHtml;
     if (images) {
         galleryHtml = images.map((item: any) => {
             return (
-                <img src={item} className={""} alt="" />
+                <div className="gallery-item">
+                    <img src={item} className={""} alt="" />
+                </div>
             )
         });
     }

@@ -12,7 +12,6 @@ interface GridItemsProp {
 function GridItem(props: GridItemsProp) {
     const {show, title, url, logo, thumbnail, color} = props;
     let styleProp;
-    console.log(thumbnail);
 
     // Define background color if it exists.
     // Usually for when I don't have a background image for it

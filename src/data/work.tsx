@@ -46,13 +46,13 @@ import yetiScreenshots4 from '../images/work/yeti/yeti4.jpg';
 
 import ftpsBackupScreenshot1 from '../images/work/ftps-backup/ftps-backup.jpg';
 
-import langaraThumbnail from '../images/work/langara/langara-thumbnail.jpg';
-import langaraBanner from '../images/work/langara/langara-banner.jpg';
-import langaraLogo from '../images/work/langara/langara-fishing-logo.png';
-import langaraScreenshot1 from '../images/work/langara/langara.jpg';
-import langaraScreenshot2 from '../images/work/langara/langara2.jpg';
-import langaraScreenshot3 from '../images/work/langara/langara3.jpg';
-import langaraScreenshot4 from '../images/work/langara/langara4.jpg';
+// import langaraThumbnail from '../images/work/langara/langara-thumbnail.jpg';
+// import langaraBanner from '../images/work/langara/langara-banner.jpg';
+// import langaraLogo from '../images/work/langara/langara-fishing-logo.png';
+// import langaraScreenshot1 from '../images/work/langara/langara.jpg';
+// import langaraScreenshot2 from '../images/work/langara/langara2.jpg';
+// import langaraScreenshot3 from '../images/work/langara/langara3.jpg';
+// import langaraScreenshot4 from '../images/work/langara/langara4.jpg';
 
 
 export const work = [
@@ -269,30 +269,30 @@ export const work = [
         "tags": ["Python"],
         "screenshots": [ftpsBackupScreenshot1]
     },
-    {
-        "show": true,
-        "title": "Langara Fishing Resort",
-        "shortened_title": "Backup",
-        "category": "Wordpress",
-        "color": '#fed752',
-        "slug": "langara-fishing-resort",
-        "background_image": langaraBanner,
-        "logo": langaraLogo,
-        "thumbnail": langaraThumbnail,
-        "text": [
-            {
-                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ligula in neque volutpat, ac tempor nisl ultrices. Integer at mollis sapien, id interdum erat. Donec massa purus, convallis eu iaculis eu, vehicula a purus. Nullam in imperdiet enim, eget rutrum ex. Ut ac mi velit. Mauris non maximus odio. Fusce vestibulum enim auctor felis ultricies, eget dapibus turpis iaculis. Nulla pharetra pharetra quam, in pellentesque augue tempus sit amet. Pellentesque arcu tortor, tristique ac viverra ac, malesuada sit amet quam. Sed elementum felis gravida, facilisis turpis ut, tempus erat. Donec a lorem tristique, condimentum dolor ut, gravida orci."
-            }
-        ],
-        "links": [
-            {
-                "url": "https://www.langara.com/",
-                "label": "View Website"
-            }
-        ],
-        "tags": ["MYSQL", "PHP", "Timber", "Twig", "Wordpress"],
-        "screenshots": [langaraScreenshot1, langaraScreenshot2, langaraScreenshot3, langaraScreenshot4]
-    },
+    // {
+    //     "show": true,
+    //     "title": "Langara Fishing Resort",
+    //     "shortened_title": "Backup",
+    //     "category": "Wordpress",
+    //     "color": '#fed752',
+    //     "slug": "langara-fishing-resort",
+    //     "background_image": langaraBanner,
+    //     "logo": langaraLogo,
+    //     "thumbnail": langaraThumbnail,
+    //     "text": [
+    //         {
+    //             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ligula in neque volutpat, ac tempor nisl ultrices. Integer at mollis sapien, id interdum erat. Donec massa purus, convallis eu iaculis eu, vehicula a purus. Nullam in imperdiet enim, eget rutrum ex. Ut ac mi velit. Mauris non maximus odio. Fusce vestibulum enim auctor felis ultricies, eget dapibus turpis iaculis. Nulla pharetra pharetra quam, in pellentesque augue tempus sit amet. Pellentesque arcu tortor, tristique ac viverra ac, malesuada sit amet quam. Sed elementum felis gravida, facilisis turpis ut, tempus erat. Donec a lorem tristique, condimentum dolor ut, gravida orci."
+    //         }
+    //     ],
+    //     "links": [
+    //         {
+    //             "url": "https://www.langara.com/",
+    //             "label": "View Website"
+    //         }
+    //     ],
+    //     "tags": ["MYSQL", "PHP", "Timber", "Twig", "Wordpress"],
+    //     "screenshots": [langaraScreenshot1, langaraScreenshot2, langaraScreenshot3, langaraScreenshot4]
+    // },
     {
         "show": true,
         "title": "Eleven Experience",

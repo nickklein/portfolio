@@ -8,12 +8,14 @@ import ProfileImage from '../../images/profile.jpg';
 import '../../scss/App.scss';
 import React, {useRef, useEffect} from 'react';
 import { work }  from '../../data/work';
+import { useLocation } from "react-router-dom";
 
+/** TODO: Fetch some of this data from a data set */
 function Homepage(props: {title: string}) {
     const {title} = props;
     const gitHubUrl = 'http://github.com/nickklein';
     const scrollToReference = useRef<null | HTMLDivElement>(null);
-
+    
     /**
      * Slide to view
      * @param event

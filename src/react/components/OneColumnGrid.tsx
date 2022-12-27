@@ -43,7 +43,7 @@ function OneColumnGrid(props: OneColumnGridProps) {
         <section className="one-column-txt-container section-container">
             <div className="container">
                 <div className="row">
-                    <div className="col-xl-12 col-md-12 wpjs slide-left">
+                    <div className="slide-left">
                         {descriptionHtml}
                         
                         {linksHtml && 
@@ -58,7 +58,7 @@ function OneColumnGrid(props: OneColumnGridProps) {
             {tagsHtml &&
                 <div className="skills container">
                     <div className="row">
-                        <div className="col-xl-12 col-md-12 wpjs slide-left">
+                        <div className="slide-left">
                             <p>Technologies used:</p>
                             {tagsHtml}
                         </div>

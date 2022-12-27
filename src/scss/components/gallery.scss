@@ -1,11 +1,24 @@
 @import '../_variables.scss';
 
 
+.gallery-container {
+    background: #f6f6f6;
+}
+
 .gallery {
-    display: flex;
+    @media (min-width: $md) {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+    }
+    .gallery-item {
+        padding: 5px;
+        @media (min-width: $md) {
+            flex: 0 0 50%;
+            align-self: center;
+        }
+    }
     img {
-        flex: 0 0 50%;
-        align-self: center;
         width: 100%;
         height: 100%;
     }

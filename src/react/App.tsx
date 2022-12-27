@@ -9,7 +9,7 @@ import {
     Routes
   } from "react-router-dom";
 
-
+/** TODO: Clean up */
 function App(): JSX.Element {
     return (
         <>

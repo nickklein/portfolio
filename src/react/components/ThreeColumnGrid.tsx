@@ -65,7 +65,7 @@ function ThreeColumnGrid(props: Props) {
                     color={item.color}
                     thumbnail={item.thumbnail}
                     logo={item.logo}
-                    url={"work/"+item.slug+"/"}
+                    url={"/work/"+item.slug+"/"}
                 />
             )
     });

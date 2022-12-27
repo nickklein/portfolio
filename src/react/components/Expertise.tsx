@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../scss/components/expertise.scss'
 
-
+/** TODO: props:any */
 function Expertise(props: any): JSX.Element  {
-    const {title} = props;
+    const { title } = props;
 
     return (
         <section className="expertise section-container">

@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <Homepage title="Nick Klein" />,
+        errorElement: <ErrorPage />
     },
     {
         path: "/work/:slug",
