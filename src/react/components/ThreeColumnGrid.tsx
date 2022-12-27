@@ -5,14 +5,15 @@ import GridItem from './atoms/GridItem';
 
 interface Props {
     title: string,
-    filterButtons: Array<string>,
+    filterButtons?: Array<string>,
     items: Array<CurrentType>,
-    scrollToReference: any,
+    scrollToReference?: any,
 }
 
 function ThreeColumnGrid(props: Props) {
     const { title, items, filterButtons, scrollToReference } = props;
     const [ stateItems, setStateItems] = useState(items);
+    let buttonHtml;
 
     /**
      * Filter Grid items
@@ -36,18 +37,21 @@ function ThreeColumnGrid(props: Props) {
         });
     }
 
+    
     /**
      * Create JSX Items for grid items
      */
-    const buttonHtml = filterButtons.map((item) => {
-        return (
-            <Button 
-                isButton={true} 
-                label={item} 
-                onClick={() => filterItems(item)} 
-            />
-        );
-    });
+    if (filterButtons) {
+        buttonHtml = filterButtons.map((item) => {
+            return (
+                <Button 
+                    isButton={true} 
+                    label={item} 
+                    onClick={() => filterItems(item)} 
+                />
+            );
+        });
+    }
 
 
     /**
@@ -69,12 +73,14 @@ function ThreeColumnGrid(props: Props) {
     return (
         <section className="three-col-grid section-container" ref={scrollToReference}>
             <h2>{title}</h2>
-                
-            <div className="filter">
-                <div className="btn-group filter-button-group">
-                    {buttonHtml}
+
+            { buttonHtml && 
+                <div className="filter">
+                    <div className="btn-group filter-button-group">
+                        {buttonHtml}
+                    </div>
                 </div>
-            </div>
+            }
                 
             <div className="container-wrap">
                 <div className="grid">

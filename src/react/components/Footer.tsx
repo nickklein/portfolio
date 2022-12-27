@@ -15,7 +15,7 @@ function Footer(props: Props): JSX.Element {
     const linksHtml = links.map((item, index) => {
         return (
             <li key={index}>
-                <a href={item.link} target="_blank"><span className={"icon-"+item.icon}></span></a>
+                <a href={item.link} rel="noreferrer" target="_blank"><span className={"icon-"+item.icon}></span></a>
             </li>
         )
     });

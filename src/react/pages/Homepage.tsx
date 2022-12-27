@@ -14,7 +14,12 @@ function Homepage(props: {title: string}) {
     const gitHubUrl = 'http://github.com/nickklein';
     const scrollToReference = useRef<null | HTMLDivElement>(null);
 
-    function slideToView(event: React.MouseEvent<Element, MouseEvent>) {
+    /**
+     * Slide to view
+     * @param event
+     * @return void
+     */
+    function slideToView(event: React.MouseEvent<Element, MouseEvent>): void {
         event.preventDefault();
         scrollToReference.current?.scrollIntoView({behavior: 'smooth'});
     }

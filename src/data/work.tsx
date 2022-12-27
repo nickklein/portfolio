@@ -8,6 +8,52 @@ import steamcompanionSmallLogo from '../images/work/steamcompanion/sc-small-logo
 import steamcompanionScreenshot1 from '../images/work/steamcompanion/screenshots1.jpg';
 import steamcompanionScreenshot2 from '../images/work/steamcompanion/screenshots2.jpg';
 
+import uhrScreenshot1 from '../images/work/uhr/reverse-clock-1.jpg';
+import uhrScreenshot2 from '../images/work/uhr/reverse-clock-2.jpg';
+import uhrScreenshot3 from '../images/work/uhr/reverse-clock-3.png';
+import uhrScreenshot4 from '../images/work/uhr/reverse-clock-4.png';
+import uhrThumbnail from '../images/work/uhr/clock-thumbnail.jpg';
+
+import untzScreenshot1 from '../images/work/mini-untz/untz-1.jpg';
+import untzScreenshot2 from '../images/work/mini-untz/untz-2.jpg';
+import untzThumbnail from '../images/work/mini-untz/untz-thumbnail.jpg';
+
+import fanThumbnail from '../images/work/fan/fan-extractor-thumbnail.jpg';
+import fanScreenshot1 from '../images/work/fan/fan-extractor.jpg';
+import fanScreenshot2 from '../images/work/fan/fan-extractor2.jpg';
+import fanScreenshot3 from '../images/work/fan/solder-fume-cad.png';
+
+import graduateThumbnail from '../images/work/graduate/graduate-thumbnail.jpg';
+import graduateLogo from '../images/work/graduate/graduate_hotels_logowhite_trademark.png';
+import graduateBanner from '../images/work/graduate/graduate-banner.jpg';
+import graduateScreenshot1 from '../images/work/graduate/graduate-hotels.jpg';
+import graduateScreenshot2 from '../images/work/graduate/graduate-hotels2.jpg';
+import graduateScreenshot3 from '../images/work/graduate/graduate-hotels3.jpg';
+
+import elevenExperienceThumbnail from '../images/work/eleven-experience/eleven-experience-thumbnail.jpg';
+import elevenExperienceLogo from '../images/work/eleven-experience/eleven-experience-logo.png';
+import elevenExperienceBanner from '../images/work/eleven-experience/eleven-experience-banner.jpg';
+import elevenExperienceScreenshot1 from '../images/work/eleven-experience/eleven-experience1.jpg';
+import elevenExperienceScreenshot2 from '../images/work/eleven-experience/eleven-experience2.jpg';
+import elevenExperienceScreenshot3 from '../images/work/eleven-experience/eleven-experience3.1.jpg';
+import elevenExperienceScreenshot4 from '../images/work/eleven-experience/eleven-experience3.2.jpg';
+import elevenExperienceScreenshot5 from '../images/work/eleven-experience/eleven-experience4.jpg';
+
+import yetiScreenshots1 from '../images/work/yeti/yeti1.jpg';
+import yetiScreenshots2 from '../images/work/yeti/yeti2.jpg';
+import yetiScreenshots3 from '../images/work/yeti/yeti3.jpg';
+import yetiScreenshots4 from '../images/work/yeti/yeti4.jpg';
+
+import ftpsBackupScreenshot1 from '../images/work/ftps-backup/ftps-backup.jpg';
+
+import langaraThumbnail from '../images/work/langara/langara-thumbnail.jpg';
+import langaraBanner from '../images/work/langara/langara-banner.jpg';
+import langaraLogo from '../images/work/langara/langara-fishing-logo.png';
+import langaraScreenshot1 from '../images/work/langara/langara.jpg';
+import langaraScreenshot2 from '../images/work/langara/langara2.jpg';
+import langaraScreenshot3 from '../images/work/langara/langara3.jpg';
+import langaraScreenshot4 from '../images/work/langara/langara4.jpg';
+
 
 export const work = [
     {
@@ -37,7 +83,7 @@ export const work = [
                 "label": "Visit Github",
             }
         ],
-        "screenshots": [notesScreenshot1, notesScreenshot2]
+        "screenshots": [notesScreenshot1, notesScreenshot2],
     },
     {
         "show": true,
@@ -72,5 +118,208 @@ export const work = [
         ],
         "tags": ["css", "html5", "laravel", "linux", "mysql", "php", "vuejs"],
         "screenshots": [steamcompanionScreenshot1, steamcompanionScreenshot2]
+    },
+    {
+        "show": true,
+        "title": "Clock",
+        "shortened_title": "Uhr",
+        "background_image": uhrScreenshot1,
+        "category": "Hardware",
+        "slug": "uhr",
+        "thumbnail" : uhrThumbnail,
+        "text": [
+            {
+                "text": "I woke up one morning with the saying/joke “In Bayern gehen die Uhren anders” stuck in my head, in which I had to immediately start measuring, 3D modeling a backwards clock, and take apart an unused clock and reverse it."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://www.youtube.com/watch?v=Wm4znnrQ0uA",
+                "label": "View Video"
+            },
+        ],
+        "tags": ["3D Printing", "Fusion 360"],
+        "screenshots": [uhrScreenshot1, uhrScreenshot2, uhrScreenshot3, uhrScreenshot4]
+    },
+    {
+        "show": true,
+        "title": "Mini Untz",
+        "shortened_title": "Mini Untz",
+        "category": "Hardware",
+        "color": '#c3512c',
+        "slug": "mini-untz",
+        "thumbnail" : untzThumbnail,
+        "text": [
+            {
+                "text": "The Mini Untz is a MIDI controller that I’ve created for my friend, who is interested in creating music. The unique 16 midi buttons and 4 dials make it a fun project to create and use. The project came with some exciting new challenges. The case was 3D printed, sanded, primed then spray painted red. It also required soldering together the correct connections to an Arduino board and solder the 4 potentiometers together."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://www.youtube.com/watch?v=qu29b1Y1CD4",
+                "label": "View Video"
+            },
+        ],
+        "tags": ["3D Printing", "Arduino"],
+        "screenshots": [untzScreenshot1, untzScreenshot2]
+    },
+    {
+        "show": true,
+        "title": "Solder Fume Extractor",
+        "shortened_title": "Fan",
+        "category": "Hardware",
+        "color": '#c3512c',
+        "slug": "fan",
+        "thumbnail" : fanThumbnail,
+        "text": [
+            {
+                "text": "The solder fume extactor was a quick project that I worked on that helps remove unwanted solder fumes while soldering. It was important for me to have an on/off switch, and it using power from the outlet instead of running on batteries. I designed the case in Fusion 360, and started printing it on my Prusa i3 mk3s. It uses a spare PC fan that I had lying around, an AC power adapter, an on/off switch, and carbon filters that I bought online."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://www.youtube.com/watch?v=3ezL95UZjdo",
+                "label": "Watch Timelapse video"
+            },
+            {
+                "url": "https://www.youtube.com/watch?v=-74eUCFjvPc",
+                "label": "Watch Video"
+            }
+        ],
+        "tags": ["3D Printing", "Fusion 360"],
+        "screenshots": [fanScreenshot1, fanScreenshot2, fanScreenshot3]
+    },
+    {
+        "show": true,
+        "title": "Graduate Hotels",
+        "shortened_title": "Graduate Hotels",
+        "category": "Wordpress",
+        "color": '#c3512c',
+        "slug": "graduate-hotels",
+        "background_image": graduateBanner,
+        "logo": graduateLogo,
+        "thumbnail" : graduateThumbnail,
+        "text": [
+            {
+                "text": "Graduate Hotels are hand-crafted boutique hotels, located in the heart of the most dynamic University towns in America. Relive your glory days with Graduate!"
+            },
+            {
+                "title": "Role in Project",
+                "text": " My role for this project was to create the functionality and back end for the Graduate Corporate website and all their properties, where clients can login and enter content by themselves without having to ever look at the code of the website. I implemented “modules”, where clients can go in and add, remove and reorder sections of the website, giving them full flexibility on the structure of the pages.",
+            },
+            {
+                "title": "Technical Challenges",
+                "text": " The initial scale of the website was a bit intimidating at first, since we had to build out the Corporate website and about 10 property sites within a few weeks time.",
+            },
+            {
+                "text": "The scale, the large images, site-wide Gmaps navigation and the amount of traffic to the website caused some performance issues on the website. The first few steps were to improve any sort of caching on the server side, make sure that all the files are combined and minified."
+            },
+            {
+                "text": "We moved the website to a ssl/http2 protocol, which helped with assets as well. The http2 protocol allows assets, such as images and JS files to be fetched at once instead of a few at a time. A design requirement was to have Google Maps in the navigation side-wide. Another one of the issues we stumbled upon is that importing the Google maps library causes the website to slow down by a few seconds depending on the geolocations datacenter. The solution was to move their library asset import to a click event."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://www.graduatehotels.com/",
+                "label": "View Website"
+            }
+        ],
+        "tags": ["MYSQL", "PHP", "Timber", "Twig", "Wordpress"],
+        "screenshots": [graduateScreenshot1, graduateScreenshot2, graduateScreenshot3]
+    },
+    {
+        "show": true,
+        "title": "WP Yeti",
+        "shortened_title": "Yeti",
+        "category": "Python",
+        "color": '#252934',
+        "slug": "wp-yeti",
+        "text": [
+            {
+                "text": "WP Yeti is a Python 3 script that helps with WordPress development using small automated tasks. The script speeds up development by creating WordPress PHP + Timber/Twig files, injecting pre-set functions inside the functions.php file, or creating Advanced Custom fields"
+            }
+        ],
+        "links": [
+            {
+                "url": "https://github.com/nickklein/wp-yeti",
+                "label": "Watch Github"
+            }
+        ],
+        "tags": ["MYSQL", "Python"],
+        "screenshots": [yetiScreenshots1, yetiScreenshots2, yetiScreenshots3, yetiScreenshots4]
+    },
+    {
+        "show": true,
+        "title": "FTPS Backups",
+        "shortened_title": "Backup",
+        "category": "Python",
+        "color": '#fed752',
+        "slug": "ftps-backup",
+        "text": [
+            {
+                "text": "FTPS Backup is a Python3 script that allows users to compress, encrypt specified folders using 7-Zip, then back them up to your local FTPS or USB drive automatically. I decided to quickly create it after Crashplan decided to stop offering their “Home” backup solution and start charging on a per month, per device basis. I primarily use this script to backup all computers in my home to a NAS server, which then backs it up again using Crashplans Small Business plan."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://github.com/nickklein/ftps-usb-backup",
+                "label": "Watch Github"
+            }
+        ],
+        "tags": ["Python"],
+        "screenshots": [ftpsBackupScreenshot1]
+    },
+    {
+        "show": true,
+        "title": "Langara Fishing Resort",
+        "shortened_title": "Backup",
+        "category": "Wordpress",
+        "color": '#fed752',
+        "slug": "langara-fishing-resort",
+        "background_image": langaraBanner,
+        "logo": langaraLogo,
+        "thumbnail": langaraThumbnail,
+        "text": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ligula in neque volutpat, ac tempor nisl ultrices. Integer at mollis sapien, id interdum erat. Donec massa purus, convallis eu iaculis eu, vehicula a purus. Nullam in imperdiet enim, eget rutrum ex. Ut ac mi velit. Mauris non maximus odio. Fusce vestibulum enim auctor felis ultricies, eget dapibus turpis iaculis. Nulla pharetra pharetra quam, in pellentesque augue tempus sit amet. Pellentesque arcu tortor, tristique ac viverra ac, malesuada sit amet quam. Sed elementum felis gravida, facilisis turpis ut, tempus erat. Donec a lorem tristique, condimentum dolor ut, gravida orci."
+            }
+        ],
+        "links": [
+            {
+                "url": "https://www.langara.com/",
+                "label": "View Website"
+            }
+        ],
+        "tags": ["MYSQL", "PHP", "Timber", "Twig", "Wordpress"],
+        "screenshots": [langaraScreenshot1, langaraScreenshot2, langaraScreenshot3, langaraScreenshot4]
+    },
+    {
+        "show": true,
+        "title": "Eleven Experience",
+        "shortened_title": "Eleven Experience",
+        "category": "Wordpress",
+        "color": '#c3512c',
+        "slug": "eleven-experience",
+        "background_image": elevenExperienceBanner,
+        "logo": elevenExperienceLogo,
+        "thumbnail" : elevenExperienceThumbnail,
+        "text": [
+            {
+                "text": "From heli-skiing in Northern Iceland to casting for bonefish on a remote island in the Bahamas, Eleven experiences are a different kind of escape."
+            },
+            {
+                "title": "Role in Project",
+                "text": "My primary role in the project was to program the back-end for Eleven Experience, where clients can login and enter content by themselves without having to dig through code.  My goal for each project is to make the WordPress user interface intuitive, and allow clients to add, remove and reorder sections of the website.",
+            },
+            {
+                "title": "Technical Challenges",
+                "text": " The Eleven Experience website is heavily image driven, and also includes modules such as custom maps, and a weather APIs. It was pretty critical getting the website to a good speed.",
+            },
+            {
+                "text": "The first steps were to reduce the amount of asset requests made to the server, and also combine and minify the CSS / JS files. We implemented Server-side caching (Database and Page caching), lazy loading, and caching the weather API information."
+            }
+        ],
+        "tags": ["MYSQL", "PHP", "Wordpress"],
+        "screenshots": [elevenExperienceScreenshot1, elevenExperienceScreenshot2, elevenExperienceScreenshot3, elevenExperienceScreenshot4, elevenExperienceScreenshot5]
     }
 ]

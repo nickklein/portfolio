@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../../scss/components/contact.scss'
 
-
 interface Props {
     title: string,
 }
@@ -160,16 +159,13 @@ function Contact(props: Props) {
     }
 
     function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
-        event.preventDefault();
         if (!isFormValid()) {
             fields.forEach((item) => {
                 validateField(item);
             });
+            event.preventDefault();
             return;
         }
-
-        // TODO: Axios post
-        console.log('send to back end');
     }
 
     /**
@@ -191,12 +187,12 @@ function Contact(props: Props) {
     return (
 
         <section className="contact section-container">
-            <img className="svg-border contact-top" src="data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='isolation:isolate' viewBox='-4.5 3018.5 1448.5 48' width='1448.5' height='48'><path d=' M 0 3023 L 722 3062 L 1439.5 3023.464 L 0 3023 Z ' fill='rgb(255,255,255)' vector-effect='non-scaling-stroke' stroke-width='3' stroke='rgb(255,255,255)' stroke-linejoin='miter' stroke-linecap='square' stroke-miterlimit='3'/></svg>" />
+            <img className="svg-border contact-top" src="data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='isolation:isolate' viewBox='-4.5 3018.5 1448.5 48' width='1448.5' height='48'><path d=' M 0 3023 L 722 3062 L 1439.5 3023.464 L 0 3023 Z ' fill='rgb(255,255,255)' vector-effect='non-scaling-stroke' stroke-width='3' stroke='rgb(255,255,255)' stroke-linejoin='miter' stroke-linecap='square' stroke-miterlimit='3'/></svg>" alt="section divider" />
 
             <h2 className="featured">{title}</h2>
 
             <div className="form container wpjs slide-bottom">
-                <form onSubmit={handleSubmit} id="contact">
+                <form onSubmit={handleSubmit} action="http://lifeautomation.loc/portfolio/contact" method="post" id="contact">
                     <div className="row">
                         <input 
                             id="name" 
