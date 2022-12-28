@@ -1,9 +1,36 @@
 import React from 'react'
 import '../../scss/components/expertise.scss'
 
-/** TODO: props:any */
-function Expertise(props: any): JSX.Element  {
-    const { title } = props;
+interface ExpertiseProps {
+    title: string;
+    items: {
+        image: any;
+        title: string;
+        description: string;
+    }[];
+}
+function Expertise(props: ExpertiseProps): JSX.Element  {
+    const { title, items } = props;
+    let itemsHtml;
+    
+    if (items) {
+        itemsHtml = items.map((item) => {
+            return (
+                <li className="exp-item row">
+                    <span className="icons">
+                        <img src={item.image} alt={item.title} />
+                        
+                    </span>
+
+                    <div className="info">
+                        <h3>{item.title}</h3>
+                        {item.description}
+                    </div>
+                </li>     
+            )
+        });
+    }
+
 
     return (
         <section className="expertise section-container">
@@ -12,53 +39,7 @@ function Expertise(props: any): JSX.Element  {
             </div>
             <div className="container">
                 <ul className="exp-container">
-                    <li className="exp-item row wpjs slide-left animate">
-                        <span className="icons">
-                            <img src="https://www.nickklein.ca/wp-content/uploads/2018/10/speedometer.png" alt="" />
-                            
-                        </span>
-
-                        <div className="info">
-                            <h3>Speed</h3>
-                            Fast performance and load times across varied applications
-                        </div>
-                    </li>
-                    <li className="exp-item row wpjs slide-left animate">
-                            <span className="icons">
-                                <img src="https://www.nickklein.ca/wp-content/uploads/2018/10/gear.png" alt="" />
-                                
-                            </span>
-
-                            <div className="info">
-                                <h3>Dynamic</h3>
-                                Turning static websites into dynamic ones
-                            </div>
-                    </li>
-                </ul>
-                
-                <ul className="exp-container">
-                    <li className="exp-item row wpjs slide-left animate">
-                        <span className="icons">
-                            <img src="https://www.nickklein.ca/wp-content/uploads/2018/10/wp.png" alt="" />
-                            
-                        </span>
-
-                        <div className="info">
-                            <h3>Laravel and React</h3>
-                            Flexible back-ends that allow you to add, remove and sort content
-                        </div>
-                    </li>
-                    <li className="exp-item row wpjs slide-left animate">
-                            <span className="icons">
-                                <img src="https://www.nickklein.ca/wp-content/uploads/2018/10/monitor.png" alt="" />
-                                
-                            </span>
-
-                            <div className="info">
-                                <h3>Responsive</h3>
-                                Websites will work on all device sizes
-                            </div>
-                    </li>
+                    {itemsHtml}
                 </ul>
             </div>
         </section>

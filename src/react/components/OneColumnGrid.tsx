@@ -2,13 +2,14 @@ import React from 'react'
 import '../../scss/components/onecolumngrid.scss'
 
 interface OneColumnGridProps {
+    title: string,
     text: Array<TextType>,
     tags?: Array<string>,
     links?: Array<LinkType>,
 }
 
 function OneColumnGrid(props: OneColumnGridProps) {
-    const {text, tags, links} = props;
+    const {title, text, tags, links} = props;
     let tagsHtml;
     let linksHtml;
 
@@ -21,18 +22,18 @@ function OneColumnGrid(props: OneColumnGridProps) {
         )
     });
 
-    if (tags) {
-        tagsHtml = tags.map((item) => {
-            return (
-                <span className="tag">{item}</span>
-            )
-        });
-    }
-
     if (links) {
         linksHtml = links.map((item) => {
             return (
                 <a href={item.url} className="btn dark" target="_blank">{item.label}</a>
+            )
+        });
+    }
+
+    if (tags) {
+        tagsHtml = tags.map((item) => {
+            return (
+                <span className="tag">{item}</span>
             )
         });
     }
@@ -44,6 +45,7 @@ function OneColumnGrid(props: OneColumnGridProps) {
             <div className="container">
                 <div className="row">
                     <div className="slide-left">
+                        <h2>{title}</h2>
                         {descriptionHtml}
                         
                         {linksHtml && 
@@ -60,7 +62,9 @@ function OneColumnGrid(props: OneColumnGridProps) {
                     <div className="row">
                         <div className="slide-left">
                             <p>Technologies used:</p>
-                            {tagsHtml}
+                            <span className="tags-container">
+                                {tagsHtml}
+                            </span>
                         </div>
                     </div>
                 </div>

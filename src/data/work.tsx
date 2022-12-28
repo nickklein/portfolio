@@ -84,6 +84,7 @@ export const work = [
             }
         ],
         "screenshots": [notesScreenshot1, notesScreenshot2],
+        "related": ['steamcompanion', 'eleven-experience', 'graduate-hotels']
     },
     {
         "show": true,
@@ -117,7 +118,8 @@ export const work = [
             },
         ],
         "tags": ["css", "html5", "laravel", "linux", "mysql", "php", "vuejs"],
-        "screenshots": [steamcompanionScreenshot1, steamcompanionScreenshot2]
+        "screenshots": [steamcompanionScreenshot1, steamcompanionScreenshot2],
+        "related": ['notes', 'eleven-experience', 'graduate-hotels']
     },
     {
         "show": true,

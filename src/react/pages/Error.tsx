@@ -2,11 +2,11 @@ import React from 'react'
 import { useRouteError } from "react-router-dom";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { global }  from '../../data/global';
 
 /** TODO: Finish Error page on internal pages */
 function Error() {
     const error = useRouteError();
-    const gitHubUrl = 'http://github.com/nickklein';
 
     return (
         <>
@@ -16,16 +16,7 @@ function Error() {
                 hasDivider={false}
             />
 
-            <Footer links={[
-                {
-                    icon: 'github',
-                    link: gitHubUrl,
-                },
-                {
-                    icon: 'linkedin',
-                    link: 'https://www.linkedin.com/in/nick-k-1574941b'
-                }
-            ]} /> 
+            <Footer links={global.Footer} /> 
         </>
     )
 }

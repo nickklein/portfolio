@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom';
 import Header from '../components/Header';
 import { work }  from '../../data/work';
+import { global }  from '../../data/global';
 import OneColumnGrid from '../components/OneColumnGrid';
 import Gallery from '../components/Gallery';
 import ThreeColumnGrid from '../components/ThreeColumnGrid';
@@ -11,8 +12,6 @@ import ErrorPage from '../pages/Error';
 function Work() {    
     const { slug } = useParams();
     const [current, setCurrent] = useState<CurrentType>();
-    const gitHubUrl = 'http://github.com/nickklein';
-
 
     /**
      * Fetches the data, and sets the data to it
@@ -34,8 +33,6 @@ function Work() {
         setCurrentPage(slug);
     }, []);
 
-    
-
     return (
         <>
             {current ? (
@@ -49,6 +46,7 @@ function Work() {
                     />
 
                     <OneColumnGrid
+                        title={current.title}
                         text={current.text}
                         tags={current.tags}
                         links={current.links}
@@ -60,19 +58,10 @@ function Work() {
 
                     <ThreeColumnGrid
                         title={"Other Projects"}
-                        items={[work[0], work[1], work[2]]}
+                        items={[work[0], work[1], work[5]]}
                     />
 
-                    <Footer links={[
-                        {
-                            icon: 'github',
-                            link: gitHubUrl,
-                        },
-                        {
-                            icon: 'linkedin',
-                            link: 'https://www.linkedin.com/in/nick-k-1574941b'
-                        }
-                    ]} /> 
+                    <Footer links={global.Footer} /> 
                     
                 </>
             ) : (

@@ -4,8 +4,10 @@ import '../../scss/components/gallery.scss'
 /** TODO: Props: any */
 function Gallery(props: any) {
     const { images } = props;
-
     let galleryHtml;
+
+
+    // Create Gallery JSX
     if (images) {
         galleryHtml = images.map((item: any) => {
             return (

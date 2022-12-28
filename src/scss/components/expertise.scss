@@ -18,11 +18,12 @@
 	    overflow: hidden;
 	    @media (min-width: $md) {
 	   		display: flex;
+			flex-wrap: wrap;
 		}
 
 		.exp-item {
 	    	height: 13em;
-			margin: 5px;
+			padding: 5px;
             display: flex;
 		    @media (min-width: $sm) {
 				flex: 0 0 50%;

@@ -7,13 +7,14 @@ import ThreeColumnGrid from '../components/ThreeColumnGrid';
 import ProfileImage from '../../images/profile.jpg';
 import '../../scss/App.scss';
 import React, {useRef, useEffect} from 'react';
+import { homepage }  from '../../data/homepage';
 import { work }  from '../../data/work';
-import { useLocation } from "react-router-dom";
+import { global }  from '../../data/global';
+
 
 /** TODO: Fetch some of this data from a data set */
 function Homepage(props: {title: string}) {
     const {title} = props;
-    const gitHubUrl = 'http://github.com/nickklein';
     const scrollToReference = useRef<null | HTMLDivElement>(null);
     
     /**
@@ -33,8 +34,8 @@ function Homepage(props: {title: string}) {
     return (
         <>
             <Header 
-                title={<div>Hi, I'm <span>Nick</span></div>}
-                subHeader="I build web applications"
+                title={homepage.Header.title}
+                subHeader={homepage.Header.subHeader}
                 buttons={[
                     {
                         label: "View Work",
@@ -44,50 +45,36 @@ function Homepage(props: {title: string}) {
                     },
                     {
                         label: "View Github",
-                        href: gitHubUrl,
+                        href: global.Links.gitub,
                         styleType: "secondary"
                     }
                 ]}
             />
 
             <ImageText
-                title="About"
-                image={
-                    {
-                        url: ProfileImage,
-                        alt: 'nick klein',
-                    }
-                }
-                text="I&#8217;m a Munich-born, Full Stack / Web Developer, currently living in Vancouver, BC. 
-                            I have a passion for creating intuitive web applications, and have a huge interest in 3D printing, computer hardware, gaming and Linux."
+                title={homepage.ImageText.title}
+                image={homepage.ImageText.image}
+                text={homepage.ImageText.description}
             />
 
             <Expertise 
-                title="Expertise"
+                title={homepage.Expertise.title}
+                items={homepage.Expertise.items}
             />
             
 
             <ThreeColumnGrid
-                title={"Work"}
-                filterButtons={['All', 'Hardware', 'Laravel', 'Python', 'Wordpress']}
+                title={homepage.ThreeColumnGrid.title}
+                filterButtons={homepage.ThreeColumnGrid.filterButtons}
                 items={work}
                 scrollToReference={scrollToReference} 
             />
 
             <Contact
-                title={"Contact"}
+                title={homepage.Contact.title}
             />
 
-            <Footer links={[
-                {
-                    icon: 'github',
-                    link: gitHubUrl,
-                },
-                {
-                    icon: 'linkedin',
-                    link: 'https://www.linkedin.com/in/nick-k-1574941b'
-                }
-            ]} /> 
+            <Footer links={global.Footer} /> 
         </>
     )
 }
