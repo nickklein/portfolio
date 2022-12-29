@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../../scss/components/contact.scss'
 import { useLocation } from "react-router-dom";
+import { global }  from '../../data/global';
 
 interface Props {
     title: string,
@@ -49,7 +50,6 @@ function Contact(props: Props) {
 
     // Use the `get` method to get the value of a specific query parameter
     const paramValue = searchParams.get('action');
-    console.log(searchParams.has('action'));
 
 
     /**
@@ -205,12 +205,11 @@ function Contact(props: Props) {
             <img className="svg-border contact-top" src="data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='isolation:isolate' viewBox='-4.5 3018.5 1448.5 48' width='1448.5' height='48'><path d=' M 0 3023 L 722 3062 L 1439.5 3023.464 L 0 3023 Z ' fill='rgb(255,255,255)' vector-effect='non-scaling-stroke' stroke-width='3' stroke='rgb(255,255,255)' stroke-linejoin='miter' stroke-linecap='square' stroke-miterlimit='3'/></svg>" alt="section divider" />
 
             <h2 className="featured">{title}</h2>
-
-            { searchParams.has('action') && paramValue == 'success' && <div>Success! Thank you for your message. I will try to get back as soon as possible</div> }
-            { searchParams.has('action') && paramValue == 'error' && <div>There was an error!</div> }
-
             <div className="form container wpjs slide-bottom">
-                <form onSubmit={handleSubmit} action="http://lifeautomation.loc/portfolio/contact" method="post" id="contact">
+                { searchParams.has('action') && paramValue === 'success' && <div className="success-container">Form submitted successfully.</div> }
+                { searchParams.has('action') && paramValue === 'error' && <div className="error-container">There was an error. Please try again later.</div> }
+
+                <form onSubmit={handleSubmit} action={global.Contact} method="post" id="contact">
                     <div className="row">
                         <input 
                             id="name" 

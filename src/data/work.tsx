@@ -244,7 +244,7 @@ export const work = [
         "links": [
             {
                 "url": "https://github.com/nickklein/wp-yeti",
-                "label": "Watch Github"
+                "label": "Visit Github"
             }
         ],
         "tags": ["MYSQL", "Python"],
@@ -265,7 +265,7 @@ export const work = [
         "links": [
             {
                 "url": "https://github.com/nickklein/ftps-usb-backup",
-                "label": "Watch Github"
+                "label": "Visit Github"
             }
         ],
         "tags": ["Python"],

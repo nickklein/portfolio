@@ -4,7 +4,6 @@ import Expertise from '../components/Expertise';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import ThreeColumnGrid from '../components/ThreeColumnGrid';
-import ProfileImage from '../../images/profile.jpg';
 import '../../scss/App.scss';
 import React, {useRef, useEffect} from 'react';
 import { homepage }  from '../../data/homepage';
