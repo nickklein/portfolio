@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 interface GridItemsProp {
     show: boolean,
@@ -26,7 +27,7 @@ function GridItem(props: GridItemsProp) {
         <>
             {show && 
                 <div className="col-item wpjs slide-bottom animate">
-                    <a href={url} className="grid-item">
+                    <Link to={url} className="grid-item">
                         <div className={"grid-image" + (color ? " color" : "")} style={styleProp}>
                             { thumbnail && <img className="rounded" src={thumbnail} /> }
                         </div>
@@ -39,7 +40,7 @@ function GridItem(props: GridItemsProp) {
                                 <h3>{title}</h3> 
                             }
                         </div>
-                    </a>
+                    </Link>
                 </div>
             }
         </>

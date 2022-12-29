@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './atoms/Button'
 import '../../scss/components/header.scss'
+import { Link } from 'react-router-dom';
+
 
 interface Props {
     title: JSX.Element|string,
@@ -62,7 +64,7 @@ function Header(props: Props): JSX.Element {
         <section className={"hero-container" + (short ? " short" : "")} style={heroStyling}>
             { short && 
                 <div className="container-wrap">
-                    <a className="back" href="/">&laquo; Go back</a>
+                    <Link to="/" className="back">&laquo; Go back</Link>
                 </div>
             }
 
