@@ -20,7 +20,7 @@ export const homepage = {
             url: ProfileImage,
             alt: "nick klein",
         },
-        description: "I'm a Munich-born, Full Stack / Web Developer, currently living in Vancouver, BC. I have a passion for creating intuitive web applications, and have a huge interest in 3D printing, computer hardware, gaming and Linux."
+        description: "I'm a Munich-born, Full Stack / Web Developer. I have a passion for creating intuitive web applications, and have a huge interest in 3D printing, computer hardware, gaming and Linux."
     },
     Expertise: {
         title: "Expertise",
