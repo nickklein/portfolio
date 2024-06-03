@@ -22,5 +22,5 @@ type CurrentType = {
     tags?: Array<string>,
     links?: Array<LinkType>,
     screenshots?: Array<string>,
-    related?: Array<string>
+    related?: Array<number>
 }

@@ -29,6 +29,23 @@ function Work() {
         setCurrent(filtered[0]);
     }
 
+    /**
+    * Grab and filter down the related data to it
+    * @param related
+    *
+    **/
+    function getRelatedWorks(related?: Array<number>) {
+        const filtered = work.filter((item) => {
+            if (related && related.includes(item.id)) {
+                return true;
+            }
+
+            return false;
+        });
+
+        return filtered;
+    }
+
     useEffect(() => {
         setCurrentPage(slug);
         window.scrollTo(0, 0);
@@ -57,10 +74,12 @@ function Work() {
                         images={current.screenshots} 
                     />
 
-                    <ThreeColumnGrid
-                        title={"Other Projects"}
-                        items={[work[0], work[1], work[5]]}
-                    />
+                    { (current.related !== undefined && current.related.length > 0) && ( 
+                        <ThreeColumnGrid
+                            title={"Other Projects"}
+                            items={getRelatedWorks(current.related ?? [])}
+                        />
+                    )}
 
                     <Footer links={global.Footer} /> 
                     

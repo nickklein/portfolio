@@ -4,6 +4,7 @@ import gearMonitor from '../images/expertise/gear.png'
 import monitorImage from '../images/expertise/monitor.png'
 import speedometerImage from '../images/expertise/speedometer.png'
 import wpImage from '../images/expertise/wp.png'
+import laravelImage from '../images/expertise/laravel.png'
 
 export const homepage = {
     Header: {
@@ -20,30 +21,30 @@ export const homepage = {
             url: ProfileImage,
             alt: "nick klein",
         },
-        description: "I'm a Munich-born, Full Stack / Web Developer. I have a passion for creating intuitive web applications, and have a huge interest in 3D printing, computer hardware, gaming and Linux."
+        description: "I'm a Munich-born Full Stack Developer with a passion for creating intuitive and high-performing web applications. I specialize in developing dynamic and responsive websites using modern technologies. Beyond my professional expertise, I have a keen interest in 3D printing, computer hardware, gaming, and Linux, which continually inspire my creative and technical endeavors."
     },
     Expertise: {
         title: "Expertise",
         items: [
             {
-                image: monitorImage,
-                title: "Speed",
-                description: "Fast performance and load times across varied applications"
-            },
-            {
                 image: gearMonitor,
-                title: "Dynamic",
-                description: "Turning static websites into dynamic ones"
+                title: "Dynamic Web Applications",
+                description: "Building robust and interactive web applications using modern frameworks."
             },
             {
-                image: wpImage,
-                title: "Wordpress",
-                description: "Flexible back-ends that allow you to add, remove and sort content"
+                image: laravelImage,
+                title: "Laravel",
+                description: "Expert in creating scalable, maintainable, and secure applications with Laravel."
+            },
+            {
+                image: monitorImage,
+                title: "Responsive Design",
+                description: "Creating websites that provide a consistent experience across all device sizes."
             },
             {
                 image: speedometerImage,
-                title: "Responsive",
-                description: "Websites will work on all device sizes"
+                title: "Speed",
+                description: "Fast performance and load times across varied applications"
             }
         ]
     },
