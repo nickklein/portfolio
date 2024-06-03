@@ -44,20 +44,38 @@ import yetiScreenshots2 from '../images/work/yeti/yeti2.jpg';
 import yetiScreenshots3 from '../images/work/yeti/yeti3.jpg';
 import yetiScreenshots4 from '../images/work/yeti/yeti4.jpg';
 
+import mechanicalKeyboard from '../images/work/keyboard/keyboard-top-view.jpg';
+import mechanicalKeyboard2 from '../images/work/keyboard/keyboard-in-progress.jpg';
+import mechanicalKeyboard3 from '../images/work/keyboard/keyboard-side-view.jpg';
+
 import ftpsBackupScreenshot1 from '../images/work/ftps-backup/ftps-backup.jpg';
-
-// import langaraThumbnail from '../images/work/langara/langara-thumbnail.jpg';
-// import langaraBanner from '../images/work/langara/langara-banner.jpg';
-// import langaraLogo from '../images/work/langara/langara-fishing-logo.png';
-// import langaraScreenshot1 from '../images/work/langara/langara.jpg';
-// import langaraScreenshot2 from '../images/work/langara/langara2.jpg';
-// import langaraScreenshot3 from '../images/work/langara/langara3.jpg';
-// import langaraScreenshot4 from '../images/work/langara/langara4.jpg';
-
 
 export const work = [
     {
         "show": true,
+        "id": 10,
+        "title": "Mechanical Keyboard",
+        "shortened_title": "Mechanical Keyboard",
+        "background_image": mechanicalKeyboard, 
+        "color": "#4A90E2",
+        "category": "Hardware",
+        "slug": "mechanical-keyboard",
+        "text": [
+            {
+                "text": "This project is a custom mechanical keyboard build using the DZ60 PCB. It was an exciting venture into the world of mechanical keyboards, where I learned a lot about hardware customization and soldering. The project involved selecting the right components, soldering each key switch to the PCB."
+            },
+            {
+                "title": "Challenges",
+                "text": "There were several challenges during this build. One of the major tasks was soldering every key switch to the mainboard, ensuring each connection was solid and reliable. Through this project, I gained hands-on experience with hardware assembly and a deeper understanding of keyboard customization."
+            }
+        ],
+        "tags": ["DZ60", "soldering", "hardware", "mechanical-keyboard"],
+        "screenshots": [mechanicalKeyboard, mechanicalKeyboard2, mechanicalKeyboard3],
+        "related": [7,6,5]
+    },
+    {
+        "show": true,
+        "id": 9,
         "title": "Notes App",
         "shortened_title": "Notes",
         "color": "#298dd6",
@@ -84,10 +102,11 @@ export const work = [
             }
         ],
         "screenshots": [notesScreenshot1, notesScreenshot2],
-        "related": ['steamcompanion', 'eleven-experience', 'graduate-hotels']
+        "related": [8, 4, 1]
     },
     {
         "show": true,
+        "id": 8,
         "title": "SteamCompanion",
         "shortened_title": "SC",
         "background_image": steamcompanionBgLarge,
@@ -119,10 +138,11 @@ export const work = [
         ],
         "tags": ["css", "html5", "laravel", "linux", "mysql", "php", "vuejs"],
         "screenshots": [steamcompanionScreenshot1, steamcompanionScreenshot2],
-        "related": ['notes', 'eleven-experience', 'graduate-hotels']
+        "related": [9, 4, 1]
     },
     {
         "show": true,
+        "id": 7,
         "title": "Clock",
         "shortened_title": "Uhr",
         "background_image": uhrScreenshot1,
@@ -141,14 +161,17 @@ export const work = [
             },
         ],
         "tags": ["3D Printing", "Fusion 360"],
-        "screenshots": [uhrScreenshot1, uhrScreenshot2, uhrScreenshot3, uhrScreenshot4]
+        "screenshots": [uhrScreenshot1, uhrScreenshot2, uhrScreenshot3, uhrScreenshot4],
+        "related": [10,6,5]
     },
     {
         "show": true,
+        "id": 6,
         "title": "Mini Untz",
         "shortened_title": "Mini Untz",
         "category": "Hardware",
-        "color": '#c3512c',
+        "background_image": untzScreenshot1,
+        // "color": '#c3512c',
         "slug": "mini-untz",
         "thumbnail" : untzThumbnail,
         "text": [
@@ -163,10 +186,12 @@ export const work = [
             },
         ],
         "tags": ["3D Printing", "Arduino"],
-        "screenshots": [untzScreenshot1, untzScreenshot2]
+        "screenshots": [untzScreenshot1, untzScreenshot2],
+        "related": [10,6,5]
     },
     {
         "show": true,
+        "id": 5,
         "title": "Solder Fume Extractor",
         "shortened_title": "Fan",
         "category": "Hardware",
@@ -193,6 +218,7 @@ export const work = [
     },
     {
         "show": true,
+        "id": 4,
         "title": "Graduate Hotels",
         "shortened_title": "Graduate Hotels",
         "category": "Wordpress",
@@ -231,6 +257,7 @@ export const work = [
     },
     {
         "show": true,
+        "id": 3,
         "title": "WP Yeti",
         "shortened_title": "Yeti",
         "category": "Python",
@@ -252,6 +279,7 @@ export const work = [
     },
     {
         "show": true,
+        "id": 2,
         "title": "FTPS Backups",
         "shortened_title": "Backup",
         "category": "Python",
@@ -297,6 +325,7 @@ export const work = [
     // },
     {
         "show": true,
+        "id": 1,
         "title": "Eleven Experience",
         "shortened_title": "Eleven Experience",
         "category": "Wordpress",

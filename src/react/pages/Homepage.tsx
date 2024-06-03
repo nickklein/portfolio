@@ -1,7 +1,7 @@
-import Header from '../components/Header';
 import ImageText from '../components/ImageText';
 import Expertise from '../components/Expertise';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 import Contact from '../components/Contact';
 import ThreeColumnGrid from '../components/ThreeColumnGrid';
 import '../../scss/App.scss';
@@ -11,7 +11,6 @@ import { work }  from '../../data/work';
 import { global }  from '../../data/global';
 
 
-/** TODO: Fetch some of this data from a data set */
 function Homepage(props: {title: string}) {
     const {title} = props;
     const scrollToReference = useRef<null | HTMLDivElement>(null);

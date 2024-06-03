@@ -9,6 +9,8 @@ interface ExpertiseProps {
         description: string;
     }[];
 }
+
+
 function Expertise(props: ExpertiseProps): JSX.Element  {
     const { title, items } = props;
     let itemsHtml;
