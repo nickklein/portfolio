@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import '../../scss/components/contact.scss'
 import { useLocation } from "react-router-dom";
 import { global }  from '../../data/global';
@@ -16,6 +16,8 @@ type formDataType = {
 /** TODO: Redirect with a success screen */
 function Contact(props: Props) {
     const { title } = props;
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
     const fields = ['name', 'email', 'message', 'challenge'];
     const validationCharacters = {
         name: 3,
@@ -199,6 +201,20 @@ function Contact(props: Props) {
         });
     }
 
+    useEffect(() => {
+        const handleIframeMessage = (event: MessageEvent) => {
+            if (event.data.iframeHeight && iframeRef.current) {
+                iframeRef.current.style.height = `${event.data.iframeHeight}px`;
+            }
+        };
+
+        window.addEventListener('message', handleIframeMessage);
+
+        return () => {
+            window.removeEventListener('message', handleIframeMessage);
+        };
+    }, []);
+
     return (
 
         <section id="contact" className="contact section-container">
@@ -206,67 +222,7 @@ function Contact(props: Props) {
 
             <h2 className="featured">{title}</h2>
             <div className="form container wpjs slide-bottom">
-                { searchParams.has('action') && paramValue === 'success' && <div className="success-container">Form submitted successfully.</div> }
-                { searchParams.has('action') && paramValue === 'error' && <div className="error-container">There was an error. Please try again later.</div> }
-
-                <form onSubmit={handleSubmit} action={global.Contact} method="post" id="contact">
-                    <div className="row">
-                        <input 
-                            id="name" 
-                            name="name" 
-                            type="text" 
-                            placeholder="Name"
-                            className={formData.name.hasError ? 'error' : ''}
-                            onBlur={onBlur}
-                            onChange={(event) => buildFormData(event)} 
-                            value={formData.name.text} 
-                        />
-                        {formData.name.hasError && <span className="error">Your name is invalid. It needs to be at least {validationCharacters.name} characters long.</span> }
-                    </div>
-                    <div className="row">
-                        <input 
-                            id="email" 
-                            type="email" 
-                            name="email" 
-                            placeholder="Email"
-                            className={formData.email.hasError ? 'error' : ''}
-                            onBlur={onBlur}
-                            onChange={(event) => buildFormData(event)} 
-                            value={formData.email.text} 
-                        />
-                        {formData.email.hasError && <span className="error">Your email is invalid.</span> }
-                    </div>
-                    <div className="row">
-                        <textarea 
-                            name="message" 
-                            id="message" 
-                            cols={30} 
-                            rows={10} 
-                            placeholder="Your Message"
-                            className={formData.message.hasError ? 'error' : ''}
-                            onBlur={onBlur}
-                            onChange={(event) => buildFormData(event)} 
-                            value={formData.message.text}></textarea>
-                        {formData.message.hasError && <span className="error">Your message is invalid. It needs to be at least {validationCharacters.message} characters</span> }
-                    </div>
-                    <div className="row">
-                        <input 
-                            id="challenge" 
-                            name="challenge" 
-                            type="text" 
-                            placeholder="What is 1+3?"
-                            className={formData.challenge.hasError ? 'error' : ''}
-                            onBlur={onBlur}
-                            onChange={(event) => buildFormData(event)} 
-                            value={formData.challenge.text} 
-                        />
-                        {formData.challenge.hasError && <span className="error">Your challenge is invalid.</span> }
-                    </div>
-                    
-                    <div className="row">
-                        <input type="submit" id="submit" className="btn secondary" value="Submit" />
-                    </div>
-                </form>
+                <iframe src={global.Forms.action} ref={iframeRef} style={{ border: 'none', overflow: 'hidden', width: '100%', height: 'auto' }} title="Iframe Example"></iframe>
             </div>
         </section>
 
